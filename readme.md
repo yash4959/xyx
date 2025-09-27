@@ -1,147 +1,69 @@
-# 🖥 RISC-V Reference SoC Tapeout Program VSD
-
+# 🖥️ RISC-V Reference SoC Tapeout Program — VSD
 
 <div align="center">
 
-> "In this program, we learn to design a System-on-Chip (SoC) from basic RTL to GDSII using open-source tools. Part of India's largest collaborative RISC-V tapeout initiative, empowering 3500+ participants to build silicon and advance the nation's semiconductor ecosystem."
+[![RISC-V](https://img.shields.io/badge/RISC--V-SoC%20Tapeout-blue?style=for-the-badge&logo=riscv)](https://riscv.org/)
+[![VSD](https://img.shields.io/badge/VSD-Program-orange?style=for-the-badge)](https://vsdiat.vlsisystemdesign.com/)
+![Participants](https://img.shields.io/badge/Participants-3500+-success?style=for-the-badge)
+![India](https://img.shields.io/badge/Made%20in-India-saffron?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdo....)
 
 </div>
 
-<div align="center">
+---
 
- </div>
+## 📖 About the Program  
+
+The **RISC-V Reference SoC Tapeout Program (VSD)** is India’s largest **open-source silicon design initiative**, enabling **3500+ participants** to take a design from **RTL → GDSII → Tapeout** using **SkyWater 130nm PDK** and open-source EDA tools.  
+
+Over **10 weeks**, participants gain hands-on exposure to:  
+- Digital design using **Verilog & SystemVerilog**  
+- **Synthesis & Gate-Level Simulation (GLS)** with Yosys + Icarus Verilog  
+- **Physical Design Flow** using OpenLane & Magic  
+- Timing analysis, power optimization, and floorplanning  
+- Final **SoC Tapeout** with Efabless & SkyWater  
+
+This repo documents my **week-by-week journey** with learnings, tasks, and project work.  
 
 ---
 
-## 🎯 Program Objectives & Scope
+## 📅 Weekly Progress  
 
-| Aspect                 | Details                                                                |
-| ---------------------- | --------------------------------------------------------------------   |
-| 🎓 *Learning Path* | Complete SoC Design: RTL → Synthesis → Physical Design → Tapeout      |
-| 🛠 *Tools Focus* | Open-Source EDA Ecosystem (Yosys, OpenLane, Magic, etc.)                  |
-| 🏭 *Industry Relevance* | Real-world semiconductor design methodologies                      |
-| 🤝 *Collaboration* | Part of India's largest RISC-V tapeout initiative                       |
-| 📈 *Scale* | 3500+ participants contributing to silicon advancement                          |
-| 🇮🇳 *National Impact* | Advancing India's semiconductor ecosystem                             |
+| Week | Focus Area | Status | Link |
+|------|------------|--------|------|
+| Week 0 | ⚙️ Environment Setup & Tools | ✅ Completed | [Week 0](Week0/README.md) |
+| Week 1 | 🔧 RTL Synthesis & Gate-Level Simulation | ✅ Completed | [Week 1](Week1/README.md) |
+| Week 2 | 🏗️ Combinational & Sequential Designs | ⏳ In Progress | [Week 2](Week2/README.md) |
+| Week 3 | 🧮 Timing Analysis & Optimization | ⏳ Upcoming | [Week 3](Week3/README.md) |
+| Week 4 | 🗂️ Floorplanning & Placement | ⏳ Upcoming | [Week 4](Week4/README.md) |
+| Week 5 | 🔄 Clock Tree Synthesis (CTS) | ⏳ Upcoming | [Week 5](Week5/README.md) |
+| Week 6 | 🚦 Routing & DRC/LVS Checks | ⏳ Upcoming | [Week 6](Week6/README.md) |
+| Week 7 | ⚡ Power Planning & IR Drop | ⏳ Upcoming | [Week 7](Week7/README.md) |
+| Week 8 | 🛠️ Sign-off (STA, Antenna, ERC) | ⏳ Upcoming | [Week 8](Week8/README.md) |
+| Week 9 | 📦 Integration & Chip Assembly | ⏳ Upcoming | [Week 9](Week9/README.md) |
+| Week 10 | 🎉 Final GDSII & Tapeout Submission | ⏳ Upcoming | [Week 10](Week10/README.md) |
 
+---
 
-## Table of Contents
+## 🌟 What I Aim to Achieve
+- Build a **complete SoC design flow** using **open-source tools**  
+- Contribute to **India’s semiconductor ecosystem**  
+- Gain practical **RTL-to-GDSII experience**  
+- Tapeout a **working silicon design** as part of the VSD program  
 
-| Week  | Tools / Sections |
-|-------|-----------------|
-| 0     | - [Yosys](#yosys)<br>- [Icarus Verilog](#icarus-verilog)<br>- [GTKWave](#gtkwave)<br>- [ngspice](#ngspice)<br>- [Magic](#magic)<br>- [Docker](#docker)<br>- [OpenLane](#openlane) |
+---
 
-### ** System Prerequisites**
+## 🙏 Acknowledgment  
 
--   *System Requirements: 4 vCPU, 6 GB RAM, 50 GB HDD, **Ubuntu 20.04* or higher.
+I am thankful to [**Kunal Ghosh**](https://github.com/kunalg123) and Team **[VLSI System Design (VSD)](https://vsdiat.vlsisystemdesign.com/)** for the opportunity to participate in the **RISC-V SoC Tapeout Program**.  
 
-## Week-0
+Special thanks to **RISC-V International**, **India Semiconductor Mission (ISM)**, **VLSI Society of India (VSI)**, and [**Efabless**](https://efabless.com/) for supporting this initiative.  
 
-### Yosys
-Yosys is an open-source framework for Verilog RTL synthesis. It's used to convert the human-readable HDL (Verilog) into a gate-level netlist.
+---
 
-```bash
-sudo apt-get update
-git clone https://github.com/YosysHQ/yosys.git
-cd yosys
-sudo apt install make
-sudo apt-get update
-sudo apt-get install -y build-essential clang bison flex libreadline-dev gawk tcl-dev libffi-dev git graphviz xdot pkg-config python3 libboost-system-dev libboost-python-dev libboost-filesystem-dev zlib1g-dev
-git submodule update --init --recursive
-make config-gcc
-make
-sudo make install 
-```
+## 🔗 Useful Links  
 
-[Verify Yosys Installation](./week0_output_photos/yosys_installed.png)
+[![VSD Website](https://img.shields.io/badge/VSD-Official%20Website-blue?style=flat-square)](https://vsdiat.vlsisystemdesign.com/)  
+[![RISC-V](https://img.shields.io/badge/RISC--V-International-green?style=flat-square)](https://riscv.org/)  
+[![Efabless](https://img.shields.io/badge/Efabless-Platform-orange?style=flat-square)](https://efabless.com/)  
 
-### Icarus Verilog
-Icarus Verilog is a compiler and simulator for the Verilog language.
-
-```bash
-sudo apt-get update
-sudo apt-get install iverilog
-```
-
-[Verify Icarus Verilog Installation](./week0_output_photos/iverilog_installed.png)
-
-### GTKWave
-GTKWave is a digital waveform viewer used to analyze the simulation results generated by tools like Icarus Verilog.
-
-```bash
-sudo apt-get update 
-sudo apt install gtkwave
-```
-
-[Verify GTKWave Installation](./week0_output_photos/gtkwave_installed.png)
-
-### ngspice
-ngspice is an open-source mixed-level/mixed-signal circuit simulator. It's essential for analyzing the analog behavior of circuits.
-
-Download from [https://sourceforge.net/projects/ngspice/files/](https://sourceforge.net/projects/ngspice/files/)
-
-```bash
-tar -zxvf ngspice-37.tar.gz
-cd ngspice-37
-mkdir release
-cd release
-../configure --with-x --with-readline=yes --disable-debug
-make
-sudo make install
-```
-[Verify ngspice Installation](./week0_output_photos/ngspice_installed.png)
-
-### Magic
-Magic is a venerable VLSI layout editor. It's used for creating and modifying the physical layout of integrated circuits, which is the final step before fabrication.
-
-```bash
-sudo apt-get install m4 tcsh csh libx11-dev tcl-dev tk-dev libcairo2-dev mesa-common-dev libglu1-mesa-dev libncurses-dev
-git clone https://github.com/RTimothyEdwards/magic
-cd magic
-./configure
-make
-sudo make install
-```
-
-[Verify Magic Installation](./week0_output_photos/magic_installed.png)
-
-### Docker
-Docker is a platform that uses OS-level virtualization to deliver software in packages called containers. It is a prerequisite for running the OpenLane flow, as it ensures a consistent and reproducible environment for all the tools.
-
-```bash
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt install -y build-essential python3 python3-venv python3-pip make git
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt update
-sudo apt install docker-ce docker-ce-cli containerd.io
-sudo docker run hello-world
-sudo groupadd docker
-sudo usermod -aG docker $USER
-sudo reboot
-
-# After reboot
-docker run hello-world
-```
-
-[Verify Dependencies](./week0_output_photos/dependencies_output.png)
-[Verify Docker Installation](./week0_output_photos/docker_installed.png)
-
-### OpenLane
-OpenLane is an automated RTL-to-GDSII flow that integrates a suite of open-source tools to take a design from a hardware description to a final physical layout file. Note: Docker must be installed and configured before proceeding.
-
-```bash
-cd $HOME
-git clone https://github.com/The-OpenROAD-Project/OpenLane
-cd OpenLane
-make
-make test
-```
-### 🌟 **Key Learnings from Week 0**
-
--   Successfully installed and verified the complete **open-source EDA tools** ecosystem.
--   Mastered **environment setup** for professional RTL design and synthesis workflows.
--   Established a **Docker-based OpenLane environment** for automated and reproducible design flows.
--   Configured a virtual machine (or WSL) with optimal specifications for EDA workloads.
+---
